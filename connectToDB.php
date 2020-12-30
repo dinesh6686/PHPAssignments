@@ -1,7 +1,7 @@
 <?php
     function makeConnection($servername, $username, $password, $db){
         // Create connection
-        $conn = new mysqli($servername, $username, $password);
+        $conn = new mysqli($servername, $username, $password, $db);
         // Check connection
         if ($conn->connect_error) echo "Connection failed: " . $conn->connect_error;
         else echo "Connection established Successfully!<br>";
@@ -23,11 +23,13 @@
         )";
         
         $result = $conn->query($table);
-        if ($result === TRUE) {
-            echo "Table got created successfully!<br>";
-        }
+        //Check table
+        if ($result === TRUE) echo "Table got created successfully!<br>";
         else echo "Error creating the table: ".$conn->error;
+
+        //Closing the connection
         $conn->close();
     }
+
     makeConnection("localhost","root","","magento241")
 ?>
