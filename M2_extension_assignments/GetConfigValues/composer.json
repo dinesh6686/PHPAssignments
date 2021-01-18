@@ -1,0 +1,20 @@
+{
+    "name": "celigo/get-config-values",
+    "description": "A Magento 2 module for getting configuration values",
+    "type": "magento2-module",
+    "version": "1.0",
+    "license": [
+  
+    ],
+    "require": {
+      "php": ">=5.4.0||~7.3.0||~7.4.0",
+      "magento/framework": "^100.0 || ^101.0 || ^102.0 || ^103.0"
+    },
+    "autoload": {
+      "files": [ "registration.php" ],
+      "psr-4": {
+        "Celigo\\GetConfigValues\\": ""
+      }
+    }
+  }
+  

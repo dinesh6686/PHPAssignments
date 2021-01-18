@@ -1,0 +1,15 @@
+<!--
+/**
+ * @author Dinesh
+ * @copyright Copyright (c) 2020 Github (https://www.github.com/dinesh6686)
+ * @package Celigo_GetConfigValues
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/getConfigValues/:pathAndScope" method="GET"> //change here
+        <service class="Celigo\GetConfigValues\Api\GetConfigValuesInterface" method="get"/>
+        <resources>
+            <resource ref="Celigo_GetConfigValues::celigo"/>
+        </resources>
+    </route>
+</routes>

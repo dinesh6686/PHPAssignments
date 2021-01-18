@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Celigo\GetConfigValues\Api\GetConfigValuesInterface" type="Celigo\GetConfigValues\Model\GetConfigValues"/>
+
+    <type name="Celigo\GetConfigValues\Logger\Handler">
+        <arguments>
+            <argument name="path" xsi:type="string">Magento\Framework\Filesystem\Driver\File</argument>
+            <argument name="scope" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Celigo\GetConfigValues\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">celigo</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Celigo\GetConfigValues\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
