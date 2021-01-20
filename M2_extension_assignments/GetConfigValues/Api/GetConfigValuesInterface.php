@@ -8,14 +8,16 @@ namespace Celigo\GetConfigValues\Api;
 interface GetConfigValuesInterface
 {
     
-   const SCOPE_TYPE_DEFAULT = 'stores';
-
-    /**
-    * Retrieve config value by path and scope.
-    *
-    * @param string $path The path through the tree of configuration values, e.g., 'general/store_information/name'
-    * @param string $scopeType The scope to use to determine config value, e.g., 'store' or 'default'
-    * @return mixed
-    */
-    public function getConfigValue($path, $scope = GetConfigValuesInterface::SCOPE_TYPE_DEFAULT);
-}
+    const SCOPE_TYPE_DEFAULT = 'default';
+     /**
+     * Returns config value for the given path and scope.
+     *
+     * @param string $pathSection
+     * @param string $pathGroup
+     * @param string $pathField
+     * @param string $scope The scope to use to determine config value, e.g., 'store' or 'default'
+     * @return string config value
+     * @throws /Magento/Framework/Exception/NoSuchEntityException
+     */
+     public function getConfigValue($pathSection, $pathGroup, $pathField, $scope = GetConfigValuesInterface::SCOPE_TYPE_DEFAULT);
+ }

@@ -3,9 +3,9 @@
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Celigo\Magento2NetSuiteConnector\Logger;
+namespace Celigo\GetConfigValues\Logger;
 
-class Logger2 extends \Monolog\Logger
+class Logger extends \Monolog\Logger
 {
     /**
      * {@inheritdoc}

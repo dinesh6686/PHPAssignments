@@ -21,10 +21,8 @@ class GetConfigValues implements \Celigo\GetConfigValues\Api\GetConfigValuesInte
     /**
      * {@inheritDoc}
      */
-    public function getConfigValue(
-        $path = null,
-        $scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT
-    ) {  
+    public function getConfigValue($pathSection,$pathGroup,$pathField,$scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT) {  
+    
         if($scope==="stores"){
             $configScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
         }
@@ -41,8 +39,8 @@ class GetConfigValues implements \Celigo\GetConfigValues\Api\GetConfigValuesInte
             $configScope = \Magento\Store\Model\ScopeInterface::SCOPE_WEBSITE;
         }
         $configPath  = $scope;
-        if ($path) {
-            $configPath .= '/' . $path;
+        if ($pathSection && $pathGroup && $pathField) {
+            $configPath = "$pathSection/$pathGroup/$pathField";
         }
         return $this->_scopeConfig->getValue($configPath, $configScope);
     }

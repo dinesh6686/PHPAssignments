@@ -27,6 +27,13 @@
         if ($result === TRUE) echo "Table got created successfully!<br>";
         else echo "Error creating the table: ".$conn->error;
 
+        //To insert data into the table
+        $sql = "INSERT INTO 6470exerciseusers (USERNAME, PASSWORD_HASH, PHONE)
+        VALUES ('Johny', 'Doe', '8989808035')";
+
+        if ($conn->query($sql) === TRUE) echo "New record created successfully";
+        else echo "Error: " . $sql . "<br>" . $conn->error;
+
         //Closing the connection
         $conn->close();
     }
