@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Sales\Api\Data\OrderInterface">
+        <attribute code="celigo_sales_order" type="Celigo\Magento2NetSuiteConnector\Api\Data\CeligoSalesOrderInterface">
+        </attribute>
+        <attribute code="customer_id" type="string">
+        </attribute>
+        <attribute code="customer_created_in" type="string">
+        </attribute>
+    </extension_attributes>
+    <extension_attributes for="Celigo\Magento2NetSuiteConnector\Api\Data\CeligoSalesOrderInterface">
+        <attribute code="parent_id" type="string">
+        </attribute>
+        <attribute code="is_exported_to_io" type="string">
+        </attribute>
+    </extension_attributes>
+    <extension_attributes for="Magento\Customer\Api\Data\CustomerInterface">
+        <attribute code="customer_custom_attribute" type="string">
+        </attribute>
+    </extension_attributes>
+</config>
